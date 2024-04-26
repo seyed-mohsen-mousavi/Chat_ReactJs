@@ -6,21 +6,21 @@ import { Emoji, EmojiStyle } from "emoji-picker-react";
 function InputText({ messageCreator, inputValue, updateValue }) {
   const [emojiOpen, setEmjiOpen] = useState(false);
   const onEmojiClick = (e) => {
-    console.log(e.emoji);
     updateValue((prevValue) => (prevValue += e.emoji));
-    <EmojiPicker className="flip-out-hor-top" />;
     setEmjiOpen(!emojiOpen);
-    console.log(e);
   };
   return (
     <form className="input" onSubmit={messageCreator}>
-      <i onClick={() => setEmjiOpen(!emojiOpen)} className="far fa-laugh-beam">
-      <Emoji unified="1f642" size="25" />
+      <i
+        onClick={() => setEmjiOpen(!emojiOpen)}
+        className={`far fa-laugh-beam ${emojiOpen ? "active" : ""}`}
+      >
+        <Emoji unified="1f642" size="25" />
       </i>
       <input
         placeholder="Type your message here! "
         type="text"
-        onChange={(e) => updateValue(e.target.value)}
+        onChange={(e) => (updateValue(e.target.value), console.log(e)) }
         value={inputValue}
       />
       <button className="fas-btn">
