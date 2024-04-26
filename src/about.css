@@ -1,0 +1,19 @@
+button {
+  background-color: #666;
+  color: white;
+  outline: none;
+  border: none;
+  border-radius: 10px;
+  padding: 5px 10px 5px 10px;
+  margin: 15px;
+  cursor: pointer;
+}button:hover{
+    background-color: #777;
+
+}
+button svg {
+    width: 28px;
+  stroke-width: 1.5;
+  stroke-linecap: "round";
+  stroke-linejoin: "round";
+}

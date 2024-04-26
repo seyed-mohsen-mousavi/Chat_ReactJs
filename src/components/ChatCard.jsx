@@ -2,19 +2,8 @@ import { useState } from "react";
 import InputText from "./InputText";
 import Messages from "./Messages";
 
-function ChatCard() {
+function ChatCard({ messages, setMessages, answers }) {
   // default messages
-  const [messages, setMessages] = useState([
-    {
-      id: 1,
-      sendFrom: "Admin",
-      text: "Welcome to the Chat👋",
-      createdAt: "",
-      date_time: `00 : 00 : 00`,
-      liked: false,
-    },
-  ]);
-
   const [inputValue, setInputValue] = useState("");
 
   // new Message
@@ -28,8 +17,22 @@ function ChatCard() {
       date_time: `${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()}`,
       liked: false,
     };
-    if (inputValue.length > 0 && inputValue.length < 24) {
+    console.log(inputValue);
+    if (inputValue.length > 0 && inputValue.length < 25) {
       messages.push(newMessage);
+      answers.map((q) => {
+        if (inputValue.toLocaleLowerCase() === q.question.toLocaleLowerCase()) {
+          const answerMessage = {
+            id: +(Date.now() * 1.1).toFixed(""),
+            sendFrom: "Admin",
+            text: q.answer,
+            createdAt: new Date().toISOString(),
+            date_time: `${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()}`,
+            liked: false,
+          };
+          messages.push(answerMessage);
+        }
+      });
       setInputValue("");
     } else {
       console.log("no no no");
@@ -37,7 +40,7 @@ function ChatCard() {
     console.log(messages);
   }
 
-  // remove hanle
+  // remove Messages hanle
   const hanleRemoveMessage = (id) => {
     setMessages((prevMessage) =>
       prevMessage.filter((e) => {
@@ -45,7 +48,7 @@ function ChatCard() {
       })
     );
   };
-  // like hanle
+  // like Messages hanle
   const hanleLikeMessage = (id) => {
     setMessages((prevMessage) =>
       prevMessage.map((message) =>

@@ -1,24 +1,24 @@
+import EmojiPicker from "emoji-picker-react";
+import { useState } from "react";
+import { Theme } from "emoji-picker-react";
+import { Emoji, EmojiStyle } from "emoji-picker-react";
+
 function InputText({ messageCreator, inputValue, updateValue }) {
+  const [emojiOpen, setEmjiOpen] = useState(false);
+  const onEmojiClick = (e) => {
+    console.log(e.emoji);
+    updateValue((prevValue) => (prevValue += e.emoji));
+    <EmojiPicker className="flip-out-hor-top" />;
+    setEmjiOpen(!emojiOpen);
+    console.log(e);
+  };
   return (
     <form className="input" onSubmit={messageCreator}>
-      <i className="far fa-laugh-beam">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          viewBox="0 0 24 24"
-          fill="none"
-          stroke="currentColor"
-          aria-hidden="true"
-        >
-          <circle cx="12" cy="12" r="10"></circle>
-          <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
-          <line x1="9" y1="9" x2="9.01" y2="9"></line>
-          <line x1="15" y1="9" x2="15.01" y2="9"></line>
-        </svg>
+      <i onClick={() => setEmjiOpen(!emojiOpen)} className="far fa-laugh-beam">
+      <Emoji unified="1f642" size="25" />
       </i>
       <input
-        placeholder="Type your message here!"
+        placeholder="Type your message here! "
         type="text"
         onChange={(e) => updateValue(e.target.value)}
         value={inputValue}
@@ -34,6 +34,17 @@ function InputText({ messageCreator, inputValue, updateValue }) {
           </svg>
         </i>
       </button>
+      <div style={{ position: "absolute", bottom: "130px" }}>
+        <EmojiPicker
+          className="flip-in-hor-bottom"
+          open={emojiOpen}
+          Theme={"dark"}
+          reactionsDefaultOpen={true}
+          width={"300px"}
+          height={"400px"}
+          onEmojiClick={onEmojiClick}
+        />
+      </div>
     </form>
   );
 }
