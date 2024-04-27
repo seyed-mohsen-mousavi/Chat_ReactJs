@@ -6,7 +6,10 @@ html {
   line-height: 1.25em;
   letter-spacing: 0.025em;
   color: #333;
-  background: #f7f7f7;
+  background: #e5e5e5;
+}
+* {
+  box-sizing: border-box;
 }
 html {
   margin: 0px;
@@ -22,6 +25,6 @@ body {
   justify-content: center;
   align-items: center;
 }
-.center{
+.center {
   display: flex;
 }

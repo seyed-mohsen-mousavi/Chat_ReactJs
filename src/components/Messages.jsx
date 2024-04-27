@@ -11,13 +11,8 @@ function Messages({ messages, onRemove, onLike }) {
               className={`message ${
                 mes.sendFrom !== "Admin" ? "contact-m " : ""
               } animated zoomInRight ${mes.liked ? "liked" : ""}`}
-              style={
-                mes.text[1]
-                  ? { fontSize: "35px", padding: "1rem 1.5rem" }
-                  : { fontSize: "15px" }
-              }
             >
-              {mes.text[0]}
+              {mes.text}
             </div>
             {/* Like and Remove */}
             <div className="li-rm">

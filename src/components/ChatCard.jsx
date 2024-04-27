@@ -11,7 +11,7 @@ function ChatCard({ messages, setMessages, answers }) {
     const newMessageObj = {
       id: Date.now(),
       sendFrom: "Member",
-      text: [inputValue, inputValue.length <= 2 ? true : false],
+      text: inputValue,
       createdAt: new Date().toISOString(),
       date_time: `${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()}`,
       liked: false,
@@ -27,7 +27,7 @@ function ChatCard({ messages, setMessages, answers }) {
           const answerMessage = {
             id: +(Date.now() * 1.1).toFixed(""),
             sendFrom: "Admin",
-            text: [q.answer, q.answer.length <= 2 ? true : false],
+            text: q.answer,
             createdAt: new Date().toISOString(),
             date_time: `${new Date().getHours()}:${new Date().getMinutes()}:${new Date().getSeconds()}`,
             liked: false,

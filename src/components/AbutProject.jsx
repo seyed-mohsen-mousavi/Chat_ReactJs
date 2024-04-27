@@ -2,19 +2,38 @@
 import "../about.css";
 function AbutProject() {
   return (
-    <div>
-      <button>
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          fill="none"
-          viewBox="0 0 24 24"
-          stroke="currentColor"
-        >
-          <path
-            d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 1 1-18 0 9 9 0 0 1 18 0Zm-9 5.25h.008v.008H12v-.008Z"
+    <div className="about">
+      <div className="dropdown">
+        <input type="checkbox" id="dropdown" />
+
+        <label className="dropdown__face" for="dropdown">
+          <div className="dropdown__text">Dropdown</div>
+
+          <div className="dropdown__arrow"></div>
+        </label>
+
+        <ul className="dropdown__items">
+          <div>
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit.
+            Consequatur doloremque, fugit assumenda aspernatur consequuntur
+            ducimus nihil ratione consectetur amet ipsam laudantium hic sed
+            maxime rem tempora repudiandae aliquid debitis explicabo?
+          </div>
+        </ul>
+      </div>
+
+      <svg>
+        <filter id="goo">
+          <feGaussianBlur in="SourceGraphic" stdDeviation="10" result="blur" />
+          <feColorMatrix
+            in="blur"
+            type="matrix"
+            values="1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -7"
+            result="goo"
           />
-        </svg>
-      </button>
+          <feBlend in="SourceGraphic" in2="goo" />
+        </filter>
+      </svg>
     </div>
   );
 }
