@@ -3,6 +3,15 @@ import ChatCard from "./components/ChatCard";
 import { useState } from "react";
 import AbutProject from "./components/AboutProject";
 function App() {
+  const producer = `
+░██████╗░░░███╗░░░███╗░█████╗░██╗░░██╗░██████╗███████╗███╗░░██╗
+██╔════╝░░░████╗░████║██╔══██╗██║░░██║██╔════╝██╔════╝████╗░██║
+╚█████╗░░░░██╔████╔██║██║░░██║███████║╚█████╗░█████╗░░██╔██╗██║
+░╚═══██╗░░░██║╚██╔╝██║██║░░██║██╔══██║░╚═══██╗██╔══╝░░██║╚████║
+██████╔╝██╗██║░╚═╝░██║╚█████╔╝██║░░██║██████╔╝███████╗██║░╚███║
+╚═════╝░╚═╝╚═╝░░░░░╚═╝░╚════╝░╚═╝░░╚═╝╚═════╝░╚══════╝╚═╝░░╚══╝`;
+  console.log(producer);
+
   const [messages, setMessages] = useState(
     localStorage.getItem("Messages")
       ? JSON.parse(localStorage.getItem("Messages"))
