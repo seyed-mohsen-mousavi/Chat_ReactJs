@@ -1,8 +1,21 @@
-# React + Vite
+### Installation tools
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+    npm install
 
-Currently, two official plugins are available:
+### Run
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+    npm run
+
+## Preview
+
+<div>
+ <img width="500" src="./public/Preview.png" alt="">
+<div/>
+ 
+
+
+## Follow me on social media
+
+<a href="https://www.coffeebede.com/s.m.mousavi"><img class="img-fluid" src="https://coffeebede.ir/DashboardTemplateV2/app-assets/images/banner/default-yellow.svg" width="250" /></a>
+
+<a href="https://www.instagram.com/vito.mohagheghian/" target="_blank"><img alt="Instagram" src="https://img.shields.io/badge/Instargam-e33811?&style=for-the-badge&logo=instagram&logoColor=white" /></a><a href="https://b2n.ir/w53930" target="_blank"><img alt="LinkedIn" src="https://img.shields.io/badge/linkedin-29146b?&style=for-the-badge&logo=linkedin&logoColor=white" /></a>
