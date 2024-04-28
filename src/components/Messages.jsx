@@ -1,4 +1,12 @@
+import { useRef } from "react";
+import { useEffect } from "react";
+
 function Messages({ messages, onRemove, onLike }) {
+  const options = {
+    year:"numeric",
+    month:"long",
+    day:"numeric"
+  }
   return (
     <div className="messages" id="chat">
       {messages.map((mes) => {
@@ -12,7 +20,10 @@ function Messages({ messages, onRemove, onLike }) {
                 mes.sendFrom !== "Admin" ? "contact-m " : ""
               } animated zoomInRight ${mes.liked ? "liked" : ""}`}
             >
-              {mes.text}
+              <p className="message_text">{mes.text}</p>
+              <span className="message_date">
+                {new Date(mes.createdAt).toLocaleDateString("en-US",options)}
+              </span>
             </div>
             {/* Like and Remove */}
             <div className="li-rm">

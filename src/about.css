@@ -1,9 +1,10 @@
 .about {
   margin: 20px;
+  margin-top: -30px;
 }
 .dropdown {
   position: relative;
-  width: 230px;
+  width: 430px;
   filter: url(#goo);
 }
 .dropdown__items {
@@ -17,10 +18,15 @@
 .dropdown__face,
 .dropdown__items {
   background-color: #fff;
-  padding: 20px;
   border-radius: 25px;
 }
+.dropdown__items {
+  padding: 8px 20px;
+}
 .dropdown__face {
+  width: 75%;
+  margin: 0 auto;
+  padding: 20px;
   display: block;
   position: relative;
 }
@@ -30,10 +36,9 @@
   right: 0;
   top: 50%;
   width: 100%;
-  list-style: none;
-  list-style-type: none;
   display: flex;
   justify-content: space-between;
+  flex-direction: column;
   visibility: hidden;
   z-index: -1;
   opacity: 0;
@@ -68,6 +73,44 @@
   opacity: 1;
 }
 
-.dropdown svg {
-  display: none;
+.dropdown__items svg {
+  width: 15px;
+  stroke-width: 1.5;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  cursor: pointer;
+}
+.use {
+  font-size: smaller;
+  display: flex;
+  align-items: center;
+  gap: 5px;
+}
+.text {
+  border-radius: 0.25rem;
+  padding: 0.125rem 0.3875rem;
+  margin: 0 0.1864rem;
+  background-color: #9b9b9ba1;
+  color: #ffffff;
+}
+.rotate90 {
+  rotate: 90deg;
+}
+.or {
+  align-items: baseline;
+}
+.or svg {
+  width: 12px;
+}
+@media (min-width: 964px) {
+  .use {
+    font-size: medium;
+  }
+}
+.about blockquote {
+  padding: 0 1em;
+  color: #848d97;
+  border-left: 0.2em solid #565c63;
+  margin: 0;
+  margin-left: 8px;
 }

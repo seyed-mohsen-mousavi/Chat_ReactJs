@@ -181,6 +181,11 @@ svg {
   margin: 1rem;
   background: #fff;
   border-radius: 1.125rem 1.125rem 1.125rem 0;
+  display: flex;
+  align-items: flex-end;
+  gap: 5px;
+  flex-direction: column;
+  min-width: 120px;
   min-height: 2.25rem;
   width: -webkit-fit-content;
   width: -moz-fit-content;
@@ -189,6 +194,7 @@ svg {
   box-shadow: 0 0 2rem rgba(0, 0, 0, 0.075),
     0rem 1rem 1rem -1rem rgba(0, 0, 0, 0.1);
   cursor: default;
+  padding: 0.5rem 1rem 0.1rem 1rem;
 }
 .mes {
   display: flex;
@@ -201,12 +207,8 @@ svg {
 .mes.contact-m .li-rm {
   flex-direction: row-reverse;
 }
-.mes.contact-m .li-rm .remove {
-  display: inline-block;
-}
-.mes .li-rm .remove {
-  display: none;
-}
+
+
 .mes:hover .li-rm {
   opacity: 100;
   visibility: visible;
@@ -231,6 +233,15 @@ svg {
   border-radius: 1.125rem 1.125rem 0 1.125rem;
   background: #333;
   color: white;
+}
+.message_date {
+  font-size: x-small;
+}
+.message_text {
+  text-align: left;
+  width: 100%;
+  margin: 0;
+  padding: 0;
 }
 
 .chat .messages .message .typing {
@@ -629,8 +640,39 @@ svg {
 }
 
 .active {
-  border-radius: 9999px;
-  border: 1px solid #66666682;
-  padding: 5px;
-  background-color: #99999996;
+  filter: brightness(0.5);
+}
+.tx {
+  --text: #2b3044;
+  --line: #bbc1e1;
+  --line-active: #d67c7c;
+}
+.tx a {
+  display: inline-block;
+  position: relative;
+  text-decoration: none;
+  color: inherit;
+  margin: 0 var(--spacing, 5px);
+  transition: margin 0.25s;
+}
+.tx a svg {
+  width: 74px;
+  height: 40px;
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%, 7px) translateZ(0);
+  fill: none;
+  stroke: var(--stroke, var(--line));
+  stroke-linecap: round;
+  stroke-width: 2px;
+  stroke-dasharray: var(--offset, 69px) 278px;
+  stroke-dashoffset: 361px;
+  transition: stroke 0.25s ease var(--stroke-delay, 0s), stroke-dasharray 0.35s;
+}
+.tx a:hover {
+  --spacing: 10px;
+  --stroke: var(--line-active);
+  --stroke-delay: 0.1s;
+  --offset: 180px;
 }

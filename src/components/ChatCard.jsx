@@ -3,6 +3,8 @@ import InputText from "./InputText";
 import Messages from "./Messages";
 
 function ChatCard({ messages, setMessages, answers }) {
+  messages ? localStorage.setItem("Messages", JSON.stringify(messages)) : "";
+
   // default messages
   const [inputValue, setInputValue] = useState("");
   // new Message
@@ -37,15 +39,13 @@ function ChatCard({ messages, setMessages, answers }) {
       });
     }
     e.preventDefault();
-    console.log(inputValue);
-    if (inputValue.length > 0 && inputValue.length < 25) {
+    if (inputValue.length > 0 && inputValue.length < 250) {
       createMessage();
     } else if (inputValue.length > 0 && inputValue.length < 2) {
       createMessage();
     } else {
       console.log("no no no");
     }
-    console.log(messages);
   };
 
   // remove Messages hanle

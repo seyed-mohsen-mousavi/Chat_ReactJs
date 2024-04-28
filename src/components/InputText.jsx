@@ -20,7 +20,7 @@ function InputText({ messageCreator, inputValue, updateValue }) {
       <input
         placeholder="Type your message here! "
         type="text"
-        onChange={(e) => (updateValue(e.target.value), console.log(e)) }
+        onChange={(e) => updateValue(e.target.value)}
         value={inputValue}
       />
       <button className="fas-btn">

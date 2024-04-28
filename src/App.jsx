@@ -1,25 +1,25 @@
 import "./style.css";
 import ChatCard from "./components/ChatCard";
 import { useState } from "react";
-import AbutProject from "./components/AbutProject";
+import AbutProject from "./components/AboutProject";
 function App() {
-  const [messages, setMessages] = useState([]);
+  const [messages, setMessages] = useState(
+    localStorage.getItem("Messages")
+      ? JSON.parse(localStorage.getItem("Messages"))
+      : []
+  );
   const defaultAnswers = [
     {
-      question: "Hi",
+      question: "Hello",
       answer: "Hey , Welcome to the Chat 👋 ",
-    },
-    {
-      question: "سلام",
-      answer: "👋 سلام , خوش آومدی به چت  ",
     },
     {
       question: "how are you",
       answer: "I'm fine 💕 how are you ?",
     },
     {
-      question: "حالت چطوره",
-      answer: " ممنون❤️ من خوبم تو چطوری   ؟ ",
+      question: "❤️",
+      answer: "Thank you very very much Bro  💞",
     },
   ];
   return (
