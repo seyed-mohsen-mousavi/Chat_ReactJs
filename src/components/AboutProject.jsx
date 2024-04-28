@@ -1,5 +1,11 @@
 // you don't need this component
 import "../about.css";
+import {
+  FolderIcon,
+  HandRaisedIcon,
+  InformationCircleIcon,
+  ArrowUturnUpIcon,
+} from "@heroicons/react/16/solid";
 function AboutProject() {
   return (
     <div className="about">
@@ -33,14 +39,7 @@ function DropDownItems() {
         <h3># For use : </h3>
         <div>
           <div className="use">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path d="M2.25 12.75V12A2.25 2.25 0 0 1 4.5 9.75h15A2.25 2.25 0 0 1 21.75 12v.75m-8.69-6.44-2.12-2.12a1.5 1.5 0 0 0-1.061-.44H4.5A2.25 2.25 0 0 0 2.25 6v12a2.25 2.25 0 0 0 2.25 2.25h15A2.25 2.25 0 0 0 21.75 18V9a2.25 2.25 0 0 0-2.25-2.25h-5.379a1.5 1.5 0 0 1-1.06-.44Z" />
-            </svg>
+            <FolderIcon />
             <p className="tx">
               &gt; You can refer to my
               <a
@@ -57,14 +56,7 @@ function DropDownItems() {
             </p>
           </div>
           <div className="use">
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              fill="none"
-              viewBox="0 0 24 24"
-              stroke="currentColor"
-            >
-              <path d="M10.05 4.575a1.575 1.575 0 1 0-3.15 0v3m3.15-3v-1.5a1.575 1.575 0 0 1 3.15 0v1.5m-3.15 0 .075 5.925m3.075.75V4.575m0 0a1.575 1.575 0 0 1 3.15 0V15M6.9 7.575a1.575 1.575 0 1 0-3.15 0v8.175a6.75 6.75 0 0 0 6.75 6.75h2.018a5.25 5.25 0 0 0 3.712-1.538l1.732-1.732a5.25 5.25 0 0 0 1.538-3.712l.003-2.024a.668.668 0 0 1 .198-.471 1.575 1.575 0 1 0-2.228-2.228 3.818 3.818 0 0 0-1.12 2.687M6.9 7.575V12m6.27 4.318A4.49 4.49 0 0 1 16.35 15m.002 0h-.002" />
-            </svg>
+            <HandRaisedIcon />
             <p>
               &gt; You can start by writing <span className="text">Hello</span>
               in the chat
@@ -72,15 +64,7 @@ function DropDownItems() {
           </div>
           <div className="use or">
             <span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                className="rotate90"
-              >
-                <path d="m9 9 6-6m0 0 6 6m-6-6v12a6 6 0 0 1-12 0v-3" />
-              </svg>
+              <ArrowUturnUpIcon className="rotate90" />
             </span>
             <p>
               Or ask me how I am by writing
@@ -89,15 +73,7 @@ function DropDownItems() {
           </div>
           <div className="use or">
             <span>
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                className="rotate90"
-              >
-                <path d="m9 9 6-6m0 0 6 6m-6-6v12a6 6 0 0 1-12 0v-3" />
-              </svg>
+              <ArrowUturnUpIcon className="rotate90" />
             </span>
             <p>
               Or make me feel better by sending a
@@ -107,16 +83,43 @@ function DropDownItems() {
           </div>
         </div>
         <hr />
-        <h3># Features</h3>
-        <blockquote>
-          <p dir="auto">You can send any text</p>
-        </blockquote>
-        <blockquote>
-          <p dir="auto"> send emoji</p>
-        </blockquote>
-        <blockquote>
-          <p dir="auto">Delete Message & Like Messages</p>
-        </blockquote>
+        <div className="Features">
+          <div>
+            <h3># Features</h3>
+            <div>
+              <blockquote>
+                <p dir="auto">You can send any text</p>
+              </blockquote>
+              <blockquote>
+                <p dir="auto"> send emoji</p>
+              </blockquote>
+              <blockquote>
+                <p dir="auto">Delete Message Like Messages</p>
+              </blockquote>
+            </div>
+          </div>
+          <div>
+            <h3># Packages</h3>
+            <div className="Packegs">
+              <blockquote>
+                <a
+                  href="https://www.npmjs.com/package/@heroicons/react"
+                  dir="auto"
+                >
+                  @heroicons/react
+                </a>
+              </blockquote>
+              <blockquote>
+                <a
+                  href="https://www.npmjs.com/package/emoji-picker-react"
+                  dir="auto"
+                >
+                  emoji-picker-react
+                </a>
+              </blockquote>
+            </div>
+          </div>
+        </div>
       </div>
       <p style={{ margin: "10px auto", color: "#a5a5a5" }} className="tx">
         For more Follow my
@@ -137,9 +140,10 @@ function DropDownItems() {
 function DropDownFace() {
   return (
     <label htmlFor="dropdown" className="dropdown__face">
-      <div className="dropdown__text">* How to use / About the project</div>
-
-      <div className="dropdown__arrow"></div>
+      <div className="dropdown__text">
+        * How to use / About the project{" "}
+        <InformationCircleIcon style={{ width: "20px" }} />
+      </div>
     </label>
   );
 }
