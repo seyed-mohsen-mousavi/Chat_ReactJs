@@ -1,6 +1,13 @@
 import { useState } from "react";
 import InputText from "./InputText";
 import Messages from "./Messages";
+import toast, { Toaster } from "react-hot-toast";
+import { TrashIcon } from "@heroicons/react/16/solid";
+const removeNotif = () =>
+  toast.error("Message Deleted !", {
+    icon: <TrashIcon style={{ width: "15px", color: "red" }} />,
+    duration:1500
+  });
 
 function ChatCard({ messages, setMessages, answers }) {
   messages ? localStorage.setItem("Messages", JSON.stringify(messages)) : "";
@@ -55,6 +62,7 @@ function ChatCard({ messages, setMessages, answers }) {
         return e.id !== id;
       })
     );
+    removeNotif();
   };
   // like Messages hanle
   const hanleLikeMessage = (id) => {
@@ -66,6 +74,7 @@ function ChatCard({ messages, setMessages, answers }) {
   };
   return (
     <div className="chat">
+      <Toaster />
       <div className="contact bar">
         <img
           className="pic"

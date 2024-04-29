@@ -1,12 +1,13 @@
 import { useRef } from "react";
 import { useEffect } from "react";
 import { TrashIcon } from "@heroicons/react/16/solid";
+
 function Messages({ messages, onRemove, onLike }) {
   const options = {
-    year:"numeric",
-    month:"long",
-    day:"numeric"
-  }
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
   return (
     <div className="messages" id="chat">
       {messages.map((mes) => {
@@ -22,7 +23,7 @@ function Messages({ messages, onRemove, onLike }) {
             >
               <p className="message_text">{mes.text}</p>
               <span className="message_date">
-                {new Date(mes.createdAt).toLocaleDateString("en-US",options)}
+                {new Date(mes.createdAt).toLocaleDateString("en-US", options)}
               </span>
             </div>
             {/* Like and Remove */}
@@ -47,7 +48,7 @@ function Messages({ messages, onRemove, onLike }) {
                   </svg>
                 </div>
               </label>
-              <TrashIcon onClick={() => onRemove(mes.id)}/> 
+              <TrashIcon onClick={() => onRemove(mes.id)} />
             </div>
           </div>
         );
