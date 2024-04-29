@@ -111,6 +111,14 @@ function DropDownItems() {
               </blockquote>
               <blockquote>
                 <a
+                  href="https://www.npmjs.com/package/react-hot-toast"
+                  dir="auto"
+                >
+                  react-hot-toast
+                </a>
+              </blockquote>
+              <blockquote>
+                <a
                   href="https://www.npmjs.com/package/emoji-picker-react"
                   dir="auto"
                 >
